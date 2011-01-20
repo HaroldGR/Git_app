@@ -1,7 +1,16 @@
+<h1>Resgistro !!</h1>
 <%= form_for :user, :url=>{:action => 'create'} do |f|  %>
 <%= render :partial =>'form', :locals =>{:f=>f }  %>
-  <div class="actions">
-    <%= f.submit "Ingresar " %>
+ <% if @user.errors.any? %>
+<div class="error">
+  <ul>
+    <% @user.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
   </div>
-<%  end %>
-<%= link_to 'Volver', :action =>'index' %>
+
+<%end%>
+<%= f.submit "Ingresar " %>
+<%end%>
+<%=  link_to 'volver',:action=>'index'%>

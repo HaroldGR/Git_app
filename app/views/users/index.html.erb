@@ -1,10 +1,11 @@
 <%= link_to 'Nuevo Usuario', :action => 'new' %>
+
 <table>
    <tr>
     <td>ID</td>
     <td>NOMBRE</td>
     <td>APELLIDO</td>
-    <td>CONTRASEÑA</td>
+    <td>EMAIL</td>
     <td>&nbsp;</td>
    </tr>
   <% @users.each do |usr|   %>
@@ -12,7 +13,7 @@
     <td><%= usr.id %></td>
     <td><%= usr.nombre  %></td>
     <td><%= usr.apellido %></td>
-    <td><%= usr.password %></td>
+    <td><%= usr.email %></td>
     <td><%= link_to 'Editar', :action =>'edit', :id =>usr.id %></td>
     <td><%= link_to 'Eliminar',{:action =>'destroy', :id =>usr.id}, { :confirm => 'Esta seguro de eliminar a '+ usr.nombre} %></td>
    </tr>

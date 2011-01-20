@@ -1,19 +1,13 @@
 class UsersController < ApplicationController
 
+
   def index
     @users=User.find(:all)
    end
 
   def new
     @user=User.new
-    @title='Sing up'
-    key = OpenSSL::PKey::RSA.new(1024)
-    @public_modulus  = key.public_key.n.to_s(16)
-    @public_exponent = key.public_key.e.to_s(16)
-    session[:key] = key.to_pem
-
-
-  end
+ end
 
 
   def create
@@ -23,7 +17,7 @@ class UsersController < ApplicationController
     else
       flash[:notice] = "El user NO se guardó..!!"
       @title = "Sign up"
-      render 'new'
+      render :action => :new
     end
 
   end
@@ -39,6 +33,7 @@ class UsersController < ApplicationController
 
   def destroy
   @user = User.find(params[:id])
+  flash[:notice] = "el user "+@user.nombre+" eliminado con éxito"
   @user.destroy
   end
 end
