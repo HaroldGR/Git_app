@@ -1,0 +1,7 @@
+<%= form_for :user,@user, :url=>{:action => 'update', :id =>@user.id} do |f|  %>
+<%= render :partial =>'form', :locals =>{:f=>f }  %>
+  <div class="actions">
+    <%= f.submit "Editar " { :confirm => 'Esta seguro de Editar a '+ f.nombre}%>
+  </div>
+<%  end %>
+<%= link_to 'Volver', :action =>'index' %>
