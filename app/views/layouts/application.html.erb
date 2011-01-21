@@ -1,14 +1,65 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Pro3</title>
-  <%= stylesheet_link_tag :all %>
-  <%= javascript_include_tag :defaults %>
-  <%= csrf_meta_tag %>
-</head>
-<body>
-
-<%= yield %>
-
-</body>
+  <head>
+    <title><%  %></title>
+    <%= stylesheet_link_tag "/stylesheets/blueprint/blueprint/print", "/stylesheets/blueprint/blueprint/screen" %>
+    <%# javascript_include_tag 'jquery-1.4.2.min', 'rails', 'application' %>
+    <%= csrf_meta_tag %>
+  </head><body>
+      <div class="container">
+      <div class="span-24 last">
+        <br/>
+        </div>
+      <div class="span-24 last">
+        <div class="span-7" clearfix>
+          <img src="/images/rubyonrails2.jpg" width="950" height="200" align="left"></img>
+        </div>
+        <div class="span-17 last">
+          <h2 class="alt"><font size="6" color="white">PRO3</font></h2>
+          <div class="alt" class="span-5 right" >
+            <%= link_to 'Login' %> |
+            <%= link_to "Logout" %>
+          </div>
+          <div class="span-7" clearfix>
+          </div>
+          <hr/>
+          </div>
+      </div>
+      <div id="menu" class="span-24 last prepend-top">
+        <hr/>
+        <div class="span-6">
+          <%= link_to "Propiedades",:action => "index" %>
+        </div>
+        <div class="span-6">
+          <%= link_to "Acerca de Nosotros",:action => "index" %>
+        </div>
+        <div class="span-6 last">
+          <%= link_to "Contactenos",:action => "index" %>
+          <BR/><BR/>
+        </div>
+        <hr/>
+      </div>
+      <div class="span-18 colborder">
+        <%= yield %>
+      </div>
+      <div class="span-5 last">
+        <div id="user_nav" >
+             <br/>
+             <br/>
+             <br/>
+             <div >
+              <ul>
+                <li><%= link_to 'Nuevo Usuario', :action => 'new' %></li>
+                <li><%= link_to 'Other'%></li>
+                <li><%= link_to 'Other'%></li>
+                </ul>
+            </div>
+         </div>
+      </div>
+      <div class="span-24 last">
+        <br/><br/><br/><br/>
+        <hr></hr>
+      </div>
+    </div>
+  </body>
 </html>
